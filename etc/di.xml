@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Sga\IpRedirect\Api\Data\LocationInterface" type="Sga\IpRedirect\Model\Location" />
+
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+
+                <item name="Sga\IpRedirect\Api\Data\LocationInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">sga_ipredirect_location</item>
+                    <item name="identifierField" xsi:type="string">location_id</item>
+                </item>
+
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="ipredirect_update" xsi:type="object">Sga\IpRedirect\Console\Command\Update</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
