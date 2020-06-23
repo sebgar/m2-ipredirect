@@ -3,8 +3,8 @@
 
     <table name="sga_ipredirect_location" resource="default" engine="innodb" comment="IPREDIRECT location">
         <column xsi:type="int" name="location_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
-        <column xsi:type="int" name="start_ip_num" padding="10" unsigned="true" nullable="false" identity="false" default="" comment="Start IP" />
-        <column xsi:type="int" name="end_ip_num" padding="10" unsigned="true" nullable="false" identity="false" default="" comment="End IP" />
+        <column xsi:type="int" name="start_ip_num" padding="10" unsigned="true" nullable="false" identity="false" comment="Start IP" />
+        <column xsi:type="int" name="end_ip_num" padding="10" unsigned="true" nullable="false" identity="false" comment="End IP" />
         <column xsi:type="varchar" name="country" length="255" nullable="false" default="" comment="Country" />
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="location_id"/>

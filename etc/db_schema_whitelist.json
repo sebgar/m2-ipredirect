@@ -1,16 +1,13 @@
 {
-    
     "sga_ipredirect_location": {
         "column": {
             "start_ip_num": true,
             "end_ip_num": true,
             "country": true,
-            
             "location_id": true
         },
         "constraint": {
             "PRIMARY": true
         }
     }
-    
 }

@@ -5,7 +5,6 @@ use Magento\Framework\App\ActionFlag;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
-use Magento\Framework\ObjectManagerInterface;
 use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
 use Magento\Framework\Stdlib\CookieManagerInterface;
 use Magento\Store\Model\StoreManagerInterface;
@@ -16,7 +15,6 @@ use Sga\IpRedirect\Model\ResourceModel\Location\Collection;
 
 class Redirect implements ObserverInterface
 {
-    protected $_objectManager;
     protected $_helperConfig;
     protected $_actionFlag;
     protected $_storeManager;
@@ -29,7 +27,6 @@ class Redirect implements ObserverInterface
     const COOKIE_GEOIP_REDIRECT = 'geoip_redirect';
 
     public function __construct(
-        ObjectManagerInterface $objectManager,
         Context $context,
         Config $helperConfig,
         ActionFlag $actionFlag,
@@ -39,7 +36,6 @@ class Redirect implements ObserverInterface
         CookieManagerInterface $cookieManager,
         Collection $locationCollection
     ){
-        $this->_objectManager = $objectManager;
         $this->_helperConfig = $helperConfig;
         $this->_actionFlag = $actionFlag;
         $this->_storeManager = $storeManager;

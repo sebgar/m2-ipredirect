@@ -1,7 +1,6 @@
 <?php
 namespace Sga\IpRedirect\Model\ResourceModel;
 
-use Mage;
 use Magento\Framework\EntityManager\EntityManager;
 use Magento\Framework\EntityManager\MetadataPool;
 use Magento\Framework\Model\AbstractModel;
