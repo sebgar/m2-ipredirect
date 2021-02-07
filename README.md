@@ -2,6 +2,8 @@
 
 Redirection par IP
 
+[documentation](doc/doc.md)
+
 ## Installation
 
 Via composer
@@ -9,12 +11,3 @@ Via composer
 ```bash
 composer require sebgar/m2-ipredirect
 ```
-
-## importer la base des ips
-
-```bash
-bin/magento ipredirect:update
-```
-
-## BO
-![](https://i.ibb.co/P4S6QDH/ipredirect-bo.png)

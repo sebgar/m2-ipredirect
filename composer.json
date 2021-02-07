@@ -19,7 +19,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "Sga\\IpRedirect\\": ""
+      "Sga\\IpRedirect\\": "src/Sga/IpRedirect/"
     }
   },
   "keywords": [
