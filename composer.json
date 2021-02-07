@@ -16,10 +16,10 @@
   "minimum-stability": "stable",
   "autoload": {
     "files": [
-      "src/registration.php"
+      "registration.php"
     ],
     "psr-4": {
-      "Sga\\IpRedirect\\": "src/Sga/IpRedirect/"
+      "Sga\\IpRedirect\\": ""
     }
   },
   "keywords": [
