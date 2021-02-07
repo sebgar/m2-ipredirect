@@ -7,7 +7,7 @@ Redirection par IP
 Via composer
 
 ```bash
-composer require sebgar/m2-deferjs
+composer require sebgar/m2-ipredirect
 ```
 
 ## importer la base des ips
@@ -15,3 +15,6 @@ composer require sebgar/m2-deferjs
 ```bash
 bin/magento ipredirect:update
 ```
+
+## BO
+![](https://i.ibb.co/P4S6QDH/ipredirect-bo.png)

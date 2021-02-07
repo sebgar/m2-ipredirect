@@ -10,13 +10,13 @@ class Config extends AbstractHelper
 {
     protected $_scopeConfig;
 
-    const XML_PATH_ENABLED = 'ipredirect/general/enabled';
-    const XML_PATH_LOG_ENABLED = 'ipredirect/general/log_redirects';
-    const XML_PATH_EXCLUDE_IPS = 'ipredirect/general/exclude_ips';
-    const XML_PATH_EXCLUDE_SEARCH_ENGINE = 'ipredirect/general/exclude_search_engines';
-    const XML_PATH_EXCLUDE_SEARCH_ENGINE_NAMES = 'ipredirect/general/exclude_search_engine_names';
-    const XML_PATH_EXCLUDE_PATTERNS_URL = 'ipredirect/general/exclude_patterns_url';
-    const XML_PATH_MAPPING = 'ipredirect/general/mapping';
+    const XML_PATH_ENABLED = 'system/ipredirect/enabled';
+    const XML_PATH_LOG_ENABLED = 'system/ipredirect/log_redirects';
+    const XML_PATH_EXCLUDE_IPS = 'system/ipredirect/exclude_ips';
+    const XML_PATH_EXCLUDE_SEARCH_ENGINE = 'system/ipredirect/exclude_search_engines';
+    const XML_PATH_EXCLUDE_SEARCH_ENGINE_NAMES = 'system/ipredirect/exclude_search_engine_names';
+    const XML_PATH_EXCLUDE_PATTERNS_URL = 'system/ipredirect/exclude_patterns_url';
+    const XML_PATH_MAPPING = 'system/ipredirect/mapping';
 
     public function __construct(
         ScopeConfigInterface $scopeConfig,

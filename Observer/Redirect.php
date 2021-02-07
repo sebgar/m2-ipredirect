@@ -1,6 +1,8 @@
 <?php
-namespace Sga\IpRedirect\Model\Observer;
+namespace Sga\IpRedirect\Observer;
 
+use Monolog\Logger;
+use Psr\Log\LoggerInterface;
 use Magento\Framework\App\ActionFlag;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\Event\Observer;
@@ -15,6 +17,7 @@ use Sga\IpRedirect\Model\ResourceModel\Location\Collection;
 
 class Redirect implements ObserverInterface
 {
+    protected $_logger;
     protected $_helperConfig;
     protected $_actionFlag;
     protected $_storeManager;
@@ -28,6 +31,7 @@ class Redirect implements ObserverInterface
 
     public function __construct(
         Context $context,
+        LoggerInterface $logger,
         Config $helperConfig,
         ActionFlag $actionFlag,
         StoreManagerInterface $storeManager,
@@ -36,6 +40,7 @@ class Redirect implements ObserverInterface
         CookieManagerInterface $cookieManager,
         Collection $locationCollection
     ){
+        $this->_logger = $logger;
         $this->_helperConfig = $helperConfig;
         $this->_actionFlag = $actionFlag;
         $this->_storeManager = $storeManager;
@@ -89,7 +94,7 @@ class Redirect implements ObserverInterface
 
                                 // log
                                 if ($this->_helperConfig->isLogEnabled()) {
-                                    Mage::log('Redirect '.$this->_getVisitorsIp() . ' (' . $this->_getVisitorsIpCountrySession() . ') redirected from ' . $this->_request->getCurrentUrl() . ' to ' . $map['url'], null, 'ipredirect.log');
+                                    $this->_logger->debug('Redirect '.$this->_getVisitorsIp() . ' (' . $this->_getVisitorsIpCountrySession() . ') redirected from ' . $this->_request->getUriString() . ' to ' . $map['url']);
                                 }
 
                                 $this->_actionFlag->set('', Action::FLAG_NO_DISPATCH, true);
