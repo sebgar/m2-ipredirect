@@ -16,7 +16,7 @@
   "minimum-stability": "stable",
   "autoload": {
     "files": [
-      "registration.php"
+      "src/registration.php"
     ],
     "psr-4": {
       "Sga\\IpRedirect\\": "src/Sga/IpRedirect/"
